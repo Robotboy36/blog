@@ -58,8 +58,8 @@
 
 ``` javascript
  function log(){
-  let args = Array.prototype.concat.call([], arguments)
-  window.console.log.apply(args)
+  let args = Array.prototype.concat.apply([], arguments)
+  window.console.log.apply(null, args)
  }
 ```
 
