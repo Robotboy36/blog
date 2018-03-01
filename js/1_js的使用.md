@@ -71,10 +71,13 @@ ECMAScript 2015(es6), ECMAScript 2016(es7), ECMAScript 2017(es8)
     <script src="./a.js" defer>
     <script src="./a.js" async>
 
-    由于js在下载过程中会阻塞后面资源的加载， 所以js给出两个属性用来设置脚本的下载和执行方式<br>
-    defer: 延迟下载脚本，排在下载资源队列的后面，下载完立即执行<br>
-    async: 正常下载，但不阻塞后面资源的下载，下载完立即执行<br>
+    由于js在下载过程中会阻塞后面资源的加载， 所以js给出两个属性用来设置脚本的下载和执行方式
+    defer: 延迟下载脚本，排在下载资源队列的后面，下载完立即执行
+    async: 正常下载，但不阻塞后面资源的下载，下载完立即执行
 
-    > 需要在body解析dom之前的js不适合用defer属性，比如 html5shim
-    > 有依赖关系的js之间不适合用async属性, 比如b.js必须依赖jq运行，则jq必须先于b.js加载执行，因为async表示异步加载，加载顺序是不固定的，所以需要注意这点
+    注意事项：
+    1、需要在body解析dom之前的js不适合用defer属性，比如 html5shim
+    2、有依赖关系的js之间不适合用async属性, 比如b.js必须依赖jq运行，
+    则jq必须先于b.js加载执行，因为async表示异步加载，加载顺序是不固定的，
+    所以需要注意这点
 ```
